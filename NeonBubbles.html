@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'/>
+		<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+		<title>Neon Bubbles</title>
+			
+		<!-- this link does not guarantee that png will be in the bar on gitpreview -->
+		<link rel='icon' href='https://raw.githubusercontent.com/Just-Roma/Neon-Bubbles/main/Bubble_dark.png'/>
+
+		<!-- Style is added here to guarantee the good-looking initialization of the page in Github. -->
+		<!-- Unfortunately there are some obstacles with using CSS animation while page loading probably due to how github preview handles the loading process. -->
+		<!-- So the initial page is minimalistic. -->
+		<style>
+			html{
+				width:100%;
+				height:100%;
+				background-color:rgb(0,0,0);
+			}	
+			
+			#loadingPage{
+				position: absolute;
+				top: 45%;
+				left: 45%; 
+			}
+
+			#mainPage{
+				display:none;
+			}
+
+			#loadingText{
+				font-size:calc(1.5vw + 1.5vh);
+				color:rgb(255,255,155);
+				text-shadow:
+					0 0 7px  #ff0,
+					0 0 10px #ff0,
+					0 0 15px #ff0,
+					0 0 25px #ff0;
+			}
+
+		</style>
+		
+		<link rel='stylesheet' href='https://raw.githubusercontent.com/Just-Roma/Neon-Bubbles/main/NeonBubbles.css'/>
+
+		<script type='text/plain' src="https://raw.githubusercontent.com/Just-Roma/Neon-Bubbles/main/Bubbles.js" defer></script>
+		<script type='text/plain' src="https://raw.githubusercontent.com/Just-Roma/Neon-Bubbles/main/Background.js" defer></script>
+		<script type='text/plain' src="https://raw.githubusercontent.com/Just-Roma/Neon-Bubbles/main/main.js" defer></script>
+	</head>
+
+	<body>
+
+		<div id='loadingPage'>
+			<p id='loadingText'>Loading</p>
+		</div>
+
+		<div id='mainPage'>
+			<canvas id='Canvas'></canvas>
+
+			<div id='Menu'>
+
+				<h1>Neon Bubbles</h1>
+
+				<div class='SettingsButtons' id='Settings_Background_Colors'>
+					<label for="Background color">Background color(RGB)</label>
+					<input type="range" id="backgroundRed"   name="Background color" min="0" max="255" value="255"/>
+					<input type="range" id="backgroundGreen" name="Background color" min="0" max="255" value="0"/>
+					<input type="range" id="backgroundBlue"  name="Background color" min="0" max="255" value="255"/>
+				</div>
+
+				<div class='SettingsButtons' id='Settings_Bubbles_Colors'>
+					<label for="Bubbles color">Bubbles color(RGB)</label>
+					<input type="range" id="bubblesRed"   name="Bubbles color" min="0" max="255" value="0"/>
+					<input type="range" id="bubblesGreen" name="Bubbles color" min="0" max="255" value="255"/>
+					<input type="range" id="bubblesBlue"  name="Bubbles color" min="0" max="255" value="255"/>
+				</div>
+
+				<div class='SettingsButtons' id='Settings_Number_Of_Bubbles'>
+					<label for="Number of bubbles">Number of bubbles</label>
+					<input type="range" id="Setting_bubbles_number" name="Number of bubbles" min="0" max="50" value="0"/>
+				</div>
+
+				<button id='Change_Background_Button'>Change</button>
+
+			</div>
+		</div>
+	</body>
+</html>
